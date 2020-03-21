@@ -27,7 +27,7 @@ I'm going to gloss over this part, because I assume you already know how to **cr
 
 ## Generate Deploy Key
 
-Before Github Actions can commit and push to a `github-pages` branch, it needs to authenticate (with itself 😆). You'll need to generate new Public and Private keys. _Don't worry, these new keys wont override your personal SSH keys._
+Before Github Actions can commit and push to your `github-pages` branch, it needs to authenticate with itself (sorry, I find this hilarous 😆). You'll need to generate new Public and Private keys. _Don't worry, these new keys wont override your personal SSH keys._
 
 In your app directory, run the following command:
 
