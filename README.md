@@ -17,9 +17,9 @@
 
 ## Introduction
 
-Zeit promotes [Zeit Now](https://zeit.co/) as _"The easiest way to deploy your Next.js app"_...and it's really great. You should totally use it. [Netlify](https://www.netlify.com/) offers a similar service for building modern web apps which is also amazing.
+Zeit promotes [Zeit Now](https://zeit.co/) as _"The easiest way to deploy your Next.js app"_...and it's really great. You could totally use it. [Netlify](https://www.netlify.com/) offers a similar service for building modern web apps which is also amazing.
 
-However, I feel like Ziet and Netlify really want you on _their SaaS_. If you're interested in owning your own data (like I am), hosting on a SaaS _could be problem_. I've also found almost no (current) documentation around deploying a NextJS app to Github Pages. Well, I figured it out and I'm sharing my findings with you.
+However, I feel like Ziet and Netlify really want you on _their SaaS_. If you're interested in owning your own data (like I am), hosting on a SaaS _could be problem_. I've also found almost no current documentation around deploying a static NextJS app to Github Pages. Well, I figured it out and I'm sharing my findings with you.
 
 ## Getting Started
 
