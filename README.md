@@ -1,23 +1,19 @@
-# Deploy a Next.JS app on Github Pages with Github Actions
+<!-- omit in toc --># Deploy a Next.JS app on Github Pages with Github Actions
 
 ![Github Pages](https://github.com/gregrickaby/nextjs-github-pages/workflows/github%20pages/badge.svg)
 
 👉 **[View the website](https://gregrickaby.github.io/nextjs-github-pages/)**
 
-# Table of Contents
+## Table of Contents
 
-- [Deploy a Next.JS app on Github Pages with Github Actions](#deploy-a-nextjs-app-on-github-pages-with-github-actions)
-- [Table of Contents](#table-of-contents)
-  - [Introduction](#introduction)
-  - [Getting Started](#getting-started)
-  - [Generate Deploy Key](#generate-deploy-key)
-    - [Public Key](#public-key)
-    - [Private Key](#private-key)
-  - [Github Actions](#github-actions)
-  - [Github Pages](#github-pages)
-  - [Wrap up](#wrap-up)
-    [Github Pages](#github-pages)
-- [Wrap Up](#wrap-up)
+- [Introduction](#introduction)
+- [Getting Started](#getting-started)
+- [Generate Deploy Key](#generate-deploy-key)
+  - [Public Key](#public-key)
+  - [Private Key](#private-key)
+- [Github Actions](#github-actions)
+- [Github Pages](#github-pages)
+- [Wrap up](#wrap-up)
 
 ## Introduction
 
