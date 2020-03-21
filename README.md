@@ -2,7 +2,22 @@
 
 ![Github Pages](https://github.com/gregrickaby/nextjs-github-pages/workflows/github%20pages/badge.svg)
 
-**[View the website](https://gregrickaby.github.io/nextjs-github-pages/)**
+👉 **[View the website](https://gregrickaby.github.io/nextjs-github-pages/)**
+
+# Table of Contents
+
+- [Deploy a Next.JS app on Github Pages with Github Actions](#deploy-a-nextjs-app-on-github-pages-with-github-actions)
+- [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Getting Started](#getting-started)
+  - [Generate Deploy Key](#generate-deploy-key)
+    - [Public Key](#public-key)
+    - [Private Key](#private-key)
+  - [Github Actions](#github-actions)
+  - [Github Pages](#github-pages)
+  - [Wrap up](#wrap-up)
+    [Github Pages](#github-pages)
+- [Wrap Up](#wrap-up)
 
 ## Introduction
 
@@ -51,6 +66,8 @@ In your Github repository:
 5. Click: Add key
 
 ![screenshot](https://dl.dropbox.com/s/i64avq115i4qugi/Screenshot%202020-03-21%2010.02.25.png?dl=0)
+
+You can safely delete the two keys from your computer.
 
 ## Github Actions
 
@@ -113,8 +130,10 @@ jobs:
 
 ## Github Pages
 
-This is the easiest step, because as soon as Github recognizes there's a `/gh-pages` branch, it will turn automatically turn on Github Pages. You should be able to see your app right away!
+This is the easiest step, because as soon as Github recognizes there's a `/gh-pages` branch, it will turn automatically turn on Github Pages. You should be able to see your app right away at https://your-username.github.io/your-repo-name/
 
 ## Wrap up
 
-Thanks for reading, and good luck. If you noticed someting wrong, [file an issue](https://github.com/gregrickaby/nextjs-github-pages/issues)!
+Thanks for reading and I hope this helps. If you noticed someting wrong, please [file an issue](https://github.com/gregrickaby/nextjs-github-pages/issues). Good luck!
+
+-[Greg](https://twitter.com/GregRickaby)
