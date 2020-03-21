@@ -23,7 +23,7 @@ However, I feel like Ziet and Netlify really want you on _their SaaS_. If you're
 
 ## Getting Started
 
-I'm going to gloss over this part, because I assume you already know how to **create a [Github repo](https://help.github.com/en/github/getting-started-with-github/create-a-repo)** and **generate a [Next.JS app](https://nextjs.org/docs/getting-started#setup)**.
+I'm going to gloss over this part, because I assume you already know how to **create a [Github repo](https://help.github.com/en/github/getting-started-with-github/create-a-repo)** and **generate a [NextJS app](https://nextjs.org/docs/getting-started#setup)**.
 
 ## Generate Deploy Key
 
