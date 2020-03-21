@@ -21,7 +21,7 @@ Zeit promotes [Zeit Now](https://zeit.co/) as _"The easiest way to deploy your N
 
 However, I feel like Ziet and Netlify really want you on _their SaaS_. If you're interested in owning your own data, hosting on a SaaS _could be problem_. I've found almost no (current) documentation around deploying a Next.JS app to Github Pages.
 
-So here we are my fellow data-ownership friends...I figured out how to do it, and I'm documenting my findings for others to read. Here's how to deploy a Next.JS app to [Github Pages](https://pages.github.com/) using [Github Actions](https://github.com/features/actions) so you can own your data.
+So, here we are my fellow data-ownership friends...I figured out how and I'm sharing my findings with you. Here's how to deploy a NextJS app to [Github Pages](https://pages.github.com/) with [Github Actions](https://github.com/features/actions) (so you can own your data).
 
 ## Getting Started
 
