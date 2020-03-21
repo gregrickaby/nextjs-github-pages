@@ -19,9 +19,7 @@
 
 Zeit promotes [Zeit Now](https://zeit.co/) as _"The easiest way to deploy your Next.js app"_...and it's really great. You should totally use it. [Netlify](https://www.netlify.com/) offers a similar service for building modern web apps which is also amazing.
 
-However, I feel like Ziet and Netlify really want you on _their SaaS_. If you're interested in owning your own data, hosting on a SaaS _could be problem_. I've found almost no (current) documentation around deploying a NextJS app to Github Pages.
-
-So, here we are my fellow data-ownership friends...I figured out how and I'm sharing my findings with you. Here's how to deploy a NextJS app to [Github Pages](https://pages.github.com/) with [Github Actions](https://github.com/features/actions) (so you can own your data).
+However, I feel like Ziet and Netlify really want you on _their SaaS_. If you're interested in owning your own data, hosting on a SaaS _could be problem_. I've found almost no (current) documentation around deploying a NextJS app to Github Pages. So, here we are. I figured out how and I'm sharing my findings with you.
 
 ## Getting Started
 
@@ -37,7 +35,7 @@ In your app directory, run the following command:
 ssh-keygen -t rsa -b 4096 -C "$(git config user.email)" -f gh-pages -N ""
 ```
 
-Now open the keys in any code/text editor. You're going to copy and paste the contents into your Github repository settings in just a minute.
+Now open the keys in your code editor. In just a minute, you're going to copy and paste the contents into your Github repository settings.
 
 ### Public Key
 
@@ -71,15 +69,15 @@ This is where the magic happens. The [workflow file](https://github.com/gregrick
 
 ![screenshot](https://dl.dropbox.com/s/59p760lil6obvlr/Screenshot%202020-03-21%2010.17.34.png?dl=0)
 
-Here are the steps from my [worflow file](https://github.com/gregrickaby/nextjs-github-pages/blob/master/.github/workflows/nodejs.yml):
+Here are the steps in plain English:
 
 1. Check out `/master` branch
 2. Setup Node LTS
-3. Get Yarn's cache from the last build
+3. Get Yarn's cache from the last build 🚀
 4. Build the app
 5. Deploy the app to `/github-pages` branch (using a the `ACTIONS_DEPLOY_KEY` you generated earlier).
 
-_For the deployment step, I'm using [Peaceiris's workflow](https://github.com/peaceiris/actions-gh-pages)._
+Here's the workflow in `.yml`
 
 ```yml
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
