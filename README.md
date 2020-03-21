@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
 
-![Node.js CI](https://github.com/gregrickaby/nextjs-github-pages/workflows/Node.js%20CI/badge.svg)
+![Github Pages](https://github.com/gregrickaby/nextjs-github-pages/workflows/github%20pages/badge.svg)
 
 ## Getting Started
 
