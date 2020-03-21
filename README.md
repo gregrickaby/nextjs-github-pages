@@ -77,6 +77,8 @@ Here are the steps in plain English:
 4. Build the app
 5. Deploy the app to `/github-pages` branch (using a the `ACTIONS_DEPLOY_KEY` you generated earlier).
 
+BTW: My Github Action workflow uses [this action](https://github.com/peaceiris/actions-gh-pages) to handle the deployment. I went with a third-party action, because I don't want to have to maintain that.
+
 Here's the workflow in `.yml`
 
 ```yml
@@ -121,8 +123,6 @@ jobs:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./out
 ```
-
-BTW: My Github Action workflow uses [this action](ttps://github.com/peaceiris/actions-gh-pages) to handle the deployments. Actions within actions ∞
 
 ## Github Pages
 
