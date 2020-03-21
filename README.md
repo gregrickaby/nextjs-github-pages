@@ -126,7 +126,9 @@ jobs:
 
 ## Github Pages
 
-This is the easiest step, because as soon as Github recognizes there's a `/gh-pages` branch, it will turn automatically turn on Github Pages. You should be able to see your app right away at https://your-username.github.io/your-repo-name/
+This is the easiest step, because as soon as Github recognizes there's a `/gh-pages` branch, it'll automatically activate the Github Pages feature.
+
+You should be able to see your app right away at https://your-username.github.io/your-repo-name/
 
 ## Wrap up
 
