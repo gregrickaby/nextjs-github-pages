@@ -2,7 +2,7 @@
 
 ![Github Pages](https://github.com/gregrickaby/nextjs-github-pages/workflows/github%20pages/badge.svg)
 
-👉 **[View the website](https://gregrickaby.github.io/nextjs-github-pages/)**
+👉 **[View the deployed app](https://gregrickaby.github.io/nextjs-github-pages/)**
 
 ## Table of Contents
 
