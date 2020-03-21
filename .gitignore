@@ -11,9 +11,12 @@
 # next.js
 /.next/
 /out/
+/docs/*
+!/docs/.nojekyll
 
 # production
 /build
+
 
 # misc
 .DS_Store
