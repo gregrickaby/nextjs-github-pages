@@ -63,7 +63,7 @@ In your Github repository:
 
 ![screenshot](https://dl.dropbox.com/s/i64avq115i4qugi/Screenshot%202020-03-21%2010.02.25.png?dl=0)
 
-Now Github Actions will be able to authenticate with itself. You can safely delete the two keys from your computer.
+Now Github Actions will be able to authenticate with your Github repository. You can safely delete the two keys from your computer.
 
 ## Github Actions
 
