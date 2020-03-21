@@ -37,7 +37,7 @@ In your app directory, run the following command:
 ssh-keygen -t rsa -b 4096 -C "$(git config user.email)" -f gh-pages -N ""
 ```
 
-Now open the keys in any code/text editor. We're going to copy and paste the contents into your Github repository settings in just a minute.
+Now open the keys in any code/text editor. You're going to copy and paste the contents into your Github repository settings in just a minute.
 
 ### Public Key
 
@@ -63,7 +63,7 @@ In your Github repository:
 
 ![screenshot](https://dl.dropbox.com/s/i64avq115i4qugi/Screenshot%202020-03-21%2010.02.25.png?dl=0)
 
-You can safely delete the two keys from your computer.
+Now Github Actions will be able to authenticate with itself. You can safely delete the two keys from your computer.
 
 ## Github Actions
 
