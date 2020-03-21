@@ -75,9 +75,9 @@ Here are the steps in plain English:
 2. Setup Node LTS
 3. Get Yarn's cache from the last build 🚀
 4. Build the app
-5. Deploy the app to `/github-pages` branch (using a the `ACTIONS_DEPLOY_KEY` you generated earlier).
+5. Deploy the app to the `/github-pages` branch (using a the `ACTIONS_DEPLOY_KEY` you generated earlier).
 
-BTW: My Github Action workflow uses [this action](https://github.com/peaceiris/actions-gh-pages) to handle the deployment. I went with a third-party action, because I don't want to have to maintain that.
+BTW: My Github Action workflow uses [this action](https://github.com/peaceiris/actions-gh-pages) to handle the actual deployment. I went with a third-party action, because I don't want to have to maintain it.
 
 Here's the workflow in `.yml`
 
