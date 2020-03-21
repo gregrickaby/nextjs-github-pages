@@ -122,6 +122,8 @@ jobs:
           publish_dir: ./out
 ```
 
+BTW: My Github Action workflow uses [this action](ttps://github.com/peaceiris/actions-gh-pages) to handle the deployments. Actions within actions ∞
+
 ## Github Pages
 
 This is the easiest step, because as soon as Github recognizes there's a `/gh-pages` branch, it'll automatically activate the Github Pages feature.
