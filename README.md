@@ -67,9 +67,9 @@ Now Github Actions will be able to authenticate with your Github repository. You
 
 This is where the magic happens. The [workflow file](https://github.com/gregrickaby/nextjs-github-pages/blob/main/.github/workflows/deploy.yml) is running a few commands to deploy the app.
 
-![screenshot](https://dl.dropbox.com/s/59p760lil6obvlr/Screenshot%202020-03-21%2010.17.34.png?dl=0)
+![screenshot](https://dl.dropbox.com/s/expkrrcgono8zo8/Screen%20Shot%202021-06-04%20at%2009.35.37.png?dl=0)
 
-Here are the steps in plain English:
+Here are the steps:
 
 1. Check out `/main` branch
 2. Setup Node LTS
@@ -77,19 +77,16 @@ Here are the steps in plain English:
 4. Build the app
 5. Deploy the app to the `/github-pages` branch (using a the `ACTIONS_DEPLOY_KEY` you generated earlier).
 
-BTW: My Github Action workflow uses [this action](https://github.com/peaceiris/actions-gh-pages) to handle the actual deployment. I went with a third-party action, because I don't want to have to maintain it.
+My Github Action workflow uses [this action](https://github.com/peaceiris/actions-gh-pages) to handle the actual deployment. I went with a third-party action, because I don't want to have to maintain it.
 
-Here's the workflow in `.yml`
+Here's the workflow in `.yml`:
 
 ```yml
-# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
-name: deploy to github pages
+name: Deploy to github pages
 
 on:
   pull_request:
-    branches: [master, main]
+    branches: [main]
 
   workflow_dispatch:
 
