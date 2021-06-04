@@ -6,6 +6,7 @@
 
 ## Table of Contents
 
+- [Update](#update)
 - [Introduction](#introduction)
 - [Getting Started](#getting-started)
 - [Generate Deploy Key](#generate-deploy-key)
@@ -14,6 +15,10 @@
 - [Github Actions](#github-actions)
 - [Github Pages](#github-pages)
 - [Wrap up](#wrap-up)
+
+## Update
+
+> Vercel has since published [an official example](https://github.com/vercel/next.js/tree/canary/examples/gh-pages) for using Github pages. While the content below could still be useful as a reference, I recommend using their official example for the actual implementation.
 
 ## Introduction
 
