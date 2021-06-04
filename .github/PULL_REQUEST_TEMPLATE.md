@@ -1,12 +1,10 @@
-## Closes [github ticket number]
+# PR Title
+
+Closes <!-- github ticket number, e.g., #32 -->
 
 ## Description
 
-Please descript what did you built or fix?
-
-## Link
-
-Could you please link to your feature or fix?
+Please describe what did you built or fixed?
 
 ## Screenshot
 
