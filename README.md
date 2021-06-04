@@ -1,4 +1,4 @@
-<h1>Deploy a NextJS app on Github Pages with Github Actions</h1>
+# Deploy a NextJS app on Github Pages with Github Actions <!-- omit in toc -->
 
 ![Github Pages](https://github.com/gregrickaby/nextjs-github-pages/workflows/github%20pages/badge.svg)
 
@@ -17,9 +17,9 @@
 
 ## Introduction
 
-Zeit promotes [Zeit Now](https://zeit.co/) as _"The easiest way to deploy your Next.js app"_...and it's really great. You could totally use it. [Netlify](https://www.netlify.com/) offers a similar service for building modern web apps which is also amazing.
+[Vercel](https://vercel.com/) promotes itself as _"The easiest way to deploy your Next.js app"_...and it's really great. You could totally use it. [Netlify](https://www.netlify.com/) offers a similar service for building modern web apps which is also amazing.
 
-However, I feel like Ziet and Netlify really want you on _their SaaS_. If you're interested in owning your own data (like I am), hosting on a SaaS _could be problem_. I've also found almost no current documentation around deploying a static NextJS app to Github Pages. Well, I figured it out and I'm sharing my findings with you.
+However, I feel like Vercel and Netlify really want you on _their SaaS_. If you're interested in owning your own data (like I am), hosting on a SaaS _could be problem_. I've also found almost no current documentation around deploying a static NextJS app to Github Pages. Well, I figured it out and I'm sharing my findings with you.
 
 ## Getting Started
 
@@ -65,15 +65,15 @@ Now Github Actions will be able to authenticate with your Github repository. You
 
 ## Github Actions
 
-This is where the magic happens. The [workflow file](https://github.com/gregrickaby/nextjs-github-pages/blob/master/.github/workflows/nodejs.yml) is running a few commands to deploy the app.
+This is where the magic happens. The [workflow file](https://github.com/gregrickaby/nextjs-github-pages/blob/main/.github/workflows/deploy.yml) is running a few commands to deploy the app.
 
 ![screenshot](https://dl.dropbox.com/s/59p760lil6obvlr/Screenshot%202020-03-21%2010.17.34.png?dl=0)
 
 Here are the steps in plain English:
 
-1. Check out `/master` branch
+1. Check out `/main` branch
 2. Setup Node LTS
-3. Get Yarn's cache from the last build 🚀
+3. Get NPM's cache from the last build 🚀
 4. Build the app
 5. Deploy the app to the `/github-pages` branch (using a the `ACTIONS_DEPLOY_KEY` you generated earlier).
 
@@ -85,37 +85,44 @@ Here's the workflow in `.yml`
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: github pages
+name: deploy to github pages
 
 on:
-  push:
-    branches: [master]
+  pull_request:
+    branches: [master, main]
+
+  workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup Node
+      - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
-          node-version: "12.x"
-
-      - name: Get yarn cache
-        id: yarn-cache
-        run: echo "::set-output name=dir::$(yarn cache dir)"
+          node-version: ${{ matrix.node-version }}
 
       - name: Cache dependencies
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
-          path: ${{ steps.yarn-cache.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          path: ~/.npm
+          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-
-      - run: yarn install
-      - run: yarn build
-      - run: yarn export
+            ${{ runner.OS }}-node-
+            ${{ runner.OS }}-
+
+      - name: Build
+        run: |
+          npm ci
+          npm run build
+          npm run export
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
@@ -128,7 +135,7 @@ jobs:
 
 This is the easiest step, because as soon as Github recognizes there's a `/gh-pages` branch, it'll automatically activate the Github Pages feature.
 
-You should be able to see your app right away at https://your-username.github.io/your-repo-name/
+You should be able to see your app right away at <https://your-username.github.io/your-repo-name/>
 
 ## Wrap up
 
