@@ -46,7 +46,7 @@ module.exports = {
   assetPrefix: isProd ? '/your-github-repo-name/' : '',
 }
 ```
-3. Save the file.
+3. Save the `next.config.js`
 
 ## Generate Deploy Key
 
