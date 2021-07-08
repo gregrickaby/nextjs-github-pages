@@ -87,16 +87,17 @@ My Github Action workflow uses [this action](https://github.com/peaceiris/action
 Here's the workflow in `.yml`:
 
 ```yml
-name: Deploy to github pages
+name: Deploy to Github Pages
 
 on:
-  pull_request:
-    branches: [main]
+  push:
+    branches:
+      - main
 
   workflow_dispatch:
 
 jobs:
-  deploy:
+  deployment:
     runs-on: ubuntu-latest
 
     strategy:
@@ -122,7 +123,7 @@ jobs:
 
       - name: Build
         run: |
-          npm ci
+          npm ci --legacy-peer-deps
           npm run build
           npm run export
 
