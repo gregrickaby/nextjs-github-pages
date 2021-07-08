@@ -19,7 +19,7 @@
 
 ## Update
 
-> Vercel has since published [an official example](https://github.com/vercel/next.js/tree/canary/examples/gh-pages) for using Github pages. While the content below could still be useful as a reference, I recommend using their official example for the actual implementation.
+> Vercel has since published [an official gh-pages example](https://github.com/vercel/next.js/tree/canary/examples/gh-pages). While the implementation below still works, I recommend looking at their official example before making any major decisions.
 
 ## Introduction
 
@@ -50,7 +50,7 @@ module.exports = {
 
 ## Generate Deploy Key
 
-Before Github Actions can commit and push to the `gh-pages` branch, it needs to authenticate with itself (sorry, I find this hilarous 😆). You'll need to generate new Public and Private keys. _Don't worry, these new keys wont override your personal SSH keys._
+Before Github Actions can commit and push to the `gh-pages` branch, it needs to authenticate with itself (sorry, I find this hilarious 😆). You'll need to generate new Public and Private keys. _Don't worry, these new keys won't override your personal SSH keys._
 
 In your next.js app directory, run the following command:
 
