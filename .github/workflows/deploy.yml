@@ -1,8 +1,9 @@
-name: Deploy to github pages
+name: Deploy to Github Pages
 
 on:
-  pull_request:
-    branches: [main]
+  push:
+    branches:
+      - main
 
   workflow_dispatch:
 
@@ -33,7 +34,7 @@ jobs:
 
       - name: Build
         run: |
-          npm ci
+          npm ci --legacy-peer-deps
           npm run build
           npm run export
 
