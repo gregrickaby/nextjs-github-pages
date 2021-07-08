@@ -1,4 +1,4 @@
-# Deploy a NextJS app on Github Pages with Github Actions <!-- omit in toc -->
+# Deploy a Next.js app on Github Pages with Github Actions <!-- omit in toc -->
 
 ![Github Pages](https://github.com/gregrickaby/nextjs-github-pages/workflows/github%20pages/badge.svg)
 
@@ -28,13 +28,13 @@ However, I feel like Vercel and Netlify really want you on _their SaaS_. If you'
 
 ## Getting Started
 
-I'm going to gloss over this part, because I assume you already know how to **create a [Github repo](https://help.github.com/en/github/getting-started-with-github/create-a-repo)** and **generate a [NextJS app](https://nextjs.org/docs/getting-started#setup)**. You'll also need to place a `.nojekyll` file in `/public` to bypass Github Pages from trying to [auto-generate a static Jekyll site](https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/).
+I'm going to gloss over this part, because I assume you already know how to **create a [Github repo](https://help.github.com/en/github/getting-started-with-github/create-a-repo)** and **generate a [Next.js app](https://nextjs.org/docs/getting-started#setup)**. You'll also need to place a `.nojekyll` file in `/public` to bypass Github Pages from trying to [auto-generate a static Jekyll site](https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/).
 
 ## Generate Deploy Key
 
-Before Github Actions can commit and push to your `github-pages` branch, it needs to authenticate with itself (sorry, I find this hilarous 😆). You'll need to generate new Public and Private keys. _Don't worry, these new keys wont override your personal SSH keys._
+Before Github Actions can commit and push to the `gh-pages` branch, it needs to authenticate with itself (sorry, I find this hilarous 😆). You'll need to generate new Public and Private keys. _Don't worry, these new keys wont override your personal SSH keys._
 
-In your app directory, run the following command:
+In your next.js app directory, run the following command:
 
 ```bash
 ssh-keygen -t rsa -b 4096 -C "$(git config user.email)" -f gh-pages -N ""
@@ -80,7 +80,7 @@ Here are the steps:
 2. Setup Node LTS
 3. Get NPM's cache from the last build 🚀
 4. Build the app
-5. Deploy the app to the `/github-pages` branch (using a the `ACTIONS_DEPLOY_KEY` you generated earlier).
+5. Deploy the app to the `/gh-pages` branch (using a the `ACTIONS_DEPLOY_KEY` you generated earlier).
 
 My Github Action workflow uses [this action](https://github.com/peaceiris/actions-gh-pages) to handle the actual deployment. I went with a third-party action, because I don't want to have to maintain it.
 
