@@ -111,6 +111,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+          
+      - name: Use NPM 7
+        run: npm i -g npm@latest
 
       - name: Cache dependencies
         uses: actions/cache@v2
