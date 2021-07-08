@@ -19,7 +19,7 @@
 
 ## Update
 
-> Vercel has since published [an official gh-pages example](https://github.com/vercel/next.js/tree/canary/examples/gh-pages). While the implementation below still works, I recommend looking at their official example before making any major decisions.
+> Vercel has since published [an official gh-pages example](https://github.com/vercel/next.js/tree/canary/examples/gh-pages). While the implementation below still works, I recommend looking at their example before making any major decisions.
 
 ## Introduction
 
@@ -33,7 +33,7 @@ I'm going to gloss over this part, because I assume you already know how to **cr
 
 ## Specify the Asset Directory
 
-Next.js [allows you to prefix the assets directory](https://nextjs.org/docs/api-reference/next.config.js/cdn-support-with-asset-prefix) with the `assetPrefix` setting.
+Next.js [allows you to prefix the assets directory](https://nextjs.org/docs/api-reference/next.config.js/cdn-support-with-asset-prefix) with the `assetPrefix` setting. You'll need to do this so assets served from `/_next/static` work correctly on Github pages.
 
 1. Create `next.config.js` file
 2. Add the following and edit `your-github-repo-name` to match your Github repo name:
@@ -42,7 +42,7 @@ Next.js [allows you to prefix the assets directory](https://nextjs.org/docs/api-
 const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
-  // Use the CDN in production and localhost for development.
+  // Use the prefix in production and not development.
   assetPrefix: isProd ? '/your-github-repo-name/' : '',
 }
 ```
