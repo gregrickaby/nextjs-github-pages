@@ -9,6 +9,7 @@
 - [Update](#update)
 - [Introduction](#introduction)
 - [Getting Started](#getting-started)
+- [Specify the Asset Directory](#specify-the-asset-directory)
 - [Generate Deploy Key](#generate-deploy-key)
   - [Public Key](#public-key)
   - [Private Key](#private-key)
@@ -29,6 +30,23 @@ However, I feel like Vercel and Netlify really want you on _their SaaS_. If you'
 ## Getting Started
 
 I'm going to gloss over this part, because I assume you already know how to **create a [Github repo](https://help.github.com/en/github/getting-started-with-github/create-a-repo)** and **generate a [Next.js app](https://nextjs.org/docs/getting-started#setup)**. You'll also need to place a `.nojekyll` file in `/public` to bypass Github Pages from trying to [auto-generate a static Jekyll site](https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/).
+
+## Specify the Asset Directory
+
+Next.js [allows you to prefix the assets directory](https://nextjs.org/docs/api-reference/next.config.js/cdn-support-with-asset-prefix) with the `assetPrefix` setting.
+
+1. Create `next.config.js` file
+2. Add the following and edit `your-github-repo-name` to match your Github repo name:
+
+```js
+const isProd = process.env.NODE_ENV === 'production'
+
+module.exports = {
+  // Use the CDN in production and localhost for development.
+  assetPrefix: isProd ? '/your-github-repo-name/' : '',
+}
+```
+3. Save the file.
 
 ## Generate Deploy Key
 
