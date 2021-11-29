@@ -22,8 +22,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-          
-      - name: Use NPM 7
+
+      - name: Update NPM
         run: npm i -g npm@latest
 
       - name: Cache dependencies
@@ -37,7 +37,7 @@ jobs:
 
       - name: Build
         run: |
-          npm ci --legacy-peer-deps
+          npm i --legacy-peer-deps
           npm run build
           npm run export
 
