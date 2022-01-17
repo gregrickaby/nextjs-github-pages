@@ -4,4 +4,4 @@
 
 👉 **[View the deployed app](https://gregrickaby.github.io/nextjs-github-pages/)**
 
-📖 **[Read the blog post](https://gregrickaby.com/blog/nextjs-github-pages)**
+📖 **[Read the blog post](https://blog.gregrickaby.com/article/nextjs-github-pages)**
