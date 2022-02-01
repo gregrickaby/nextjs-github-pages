@@ -1,4 +1,4 @@
-# Deploy a Next.js app on Github Pages with Github Actions <!-- omit in toc -->
+# Deploy a Next.js app to Github Pages via Github Actions <!-- omit in toc -->
 
 ![Github Pages](https://github.com/gregrickaby/nextjs-github-pages/workflows/github%20pages/badge.svg)
 
