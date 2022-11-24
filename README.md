@@ -17,7 +17,7 @@ During my research, **I've found very little documentation around deploying a st
 
 ## Configure Next.js
 
-In order to get images to display correctly, you'll need to prefix your assets directory. This is required so assets served from `/_next/static` work correctly. Next.js has a setting for this. Additionally, you'll need to disable [automatic image optimization](https://nextjs.org/blog/next-12-3#disable-image-optimization-stable) since that feature doesn't work with next export
+In order to get images to display correctly, you'll need to prefix your assets directory. This is necessary so assets served from `/_next/static` work correctly. Additionally, you'll need to disable [automatic image optimization](https://nextjs.org/blog/next-12-3#disable-image-optimization-stable) since dynamic features doesn't work when using  `next export`.
 
 1. Create `next.config.js` file
 2. Add the following:
