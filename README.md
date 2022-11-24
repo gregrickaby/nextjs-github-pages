@@ -11,13 +11,13 @@ Vercel promotes itself as _"The easiest way to deploy your Next.js app"_ and Net
 
 During my research, **I've found very little documentation around deploying a static Next.js app to Github Pages.** I spent an entire Saturday working through it and want to share what I learned with you.
 
-> Update: Vercel has since published an [official example](https://github.com/vercel/next.js/tree/canary/examples/gh-pages). I recommend you take a look at the official example before making any major decisions.
+> Update: Vercel has since published an [official example](https://github.com/vercel/next.js/tree/canary/examples/github-pages). I recommend you take a look at the official example before making any major decisions.
 
 ---
 
 ## Configure Next.js
 
-In order to get images to display correctly, you'll need to prefix your assets directory. This is necessary so assets served from `/_next/static` work correctly. Additionally, you'll need to disable [automatic image optimization](https://nextjs.org/blog/next-12-3#disable-image-optimization-stable) since dynamic features doesn't work when using  `next export`.
+In order to get assets to display correctly, you'll need to prefix the assets directory. Additionally, you'll need to disable [automatic image optimization](https://nextjs.org/blog/next-12-3#disable-image-optimization-stable) since _dynamic features don't work_ when using `next export`.
 
 1. Create `next.config.js` file
 2. Add the following:
