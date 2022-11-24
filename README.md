@@ -1,9 +1,6 @@
 # Next.js Github Pages
 
-Deploy Next.js to Github Pages with Github Actions. 
-
-- 👉 [View the deployed app](https://gregrickaby.github.io/nextjs-github-pages/)
-- ⭐️ [Star this repo](https://github.com/gregrickaby/nextjs-github-pages)
+Deploy Next.js to Github Pages with Github Actions. 👉 [View the deployed app](https://gregrickaby.github.io/nextjs-github-pages/)
 
 ---
 
