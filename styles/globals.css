@@ -1,16 +1,119 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+p {
+  margin: 15px 0;
+  line-height: 1.8;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+header {
+  background: steelblue;
+  color: #fff;
+  padding: 5px;
+  margin-bottom: 40px;
+}
+
+header a {
+  color: #fff;
+}
+
+.container {
+  max-width: 768px;
+  margin: auto;
+  overflow: auto;
+  padding: 0 10px;
+}
+
+.btn {
+  display: inline-block;
+  background: steelblue;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:hover {
+  transform: scale(0.98);
+}
+
+.btn-back {
+  background: #f4f4f4;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.card {
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-page {
+  padding: 15px 30px;
+}
+
+.post-title {
+  margin: 10px 0;
+}
+
+.post-date {
+  background: #f4f4f4;
+  margin-bottom: 20px;
+  padding: 3px 10px;
+}
+
+.post-body ul,
+ol {
+  font-size: 110%;
+  line-height: 2.3;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.post-body pre {
+  background: #f4f4f4;
+  padding: 20px;
+  margin: 20px 0;
+  line-height: 2.3;
+}
+
+@media (max-width: 500px) {
+  .posts {
+    grid-template-columns: 1fr;
+  }
 }
