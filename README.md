@@ -39,7 +39,7 @@ module.exports = {
 .
 ├── pages/
 ├── public/
-│   └── .nokjekyll
+│   └── .nojekyll
 ├── styles/
 ├── next.config.js
 ```
