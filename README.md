@@ -12,6 +12,8 @@ Now with Next.js 13 App Router support! If you're looking for Pages Router suppo
 
 > ⚠️ Heads up! Github Pages _does not_ support serverless or edge functions. This means dynamic functionality will be disabled. [Learn more](https://nextjs.org/docs/pages/building-your-application/deploying/static-exports#unsupported-features)
 
+### Next.js Config
+
 First, you need to configure Next.js to support static exports. To do this, specifiy the output type as `export`, set the base path, and disable automatic image optimization [since dynamic features don't work](https://nextjs.org/blog/next-12-3#disable-image-optimization-stable) with static exports.
 
 1. Create `next.config.js` file
@@ -65,7 +67,28 @@ module.exports = nextConfig;
 
 Perfect! This is all you need to configure Next.js to work on Github Pages.
 
-> Heads up! Github Pages _does not_ support serverless or edge functions. This means dynamic functionality will be disabled. [Learn more](https://nextjs.org/docs/pages/building-your-application/deploying/static-exports#unsupported-features)
+### Add base path to `page.tsx`
+
+Next, you need to add the base path to your `page.tsx` file. This is required for the images to appear on Github Pages.
+
+1. Open `app/page.tsx`
+2. Find the `Image` components
+3. Add `/nextjs-github-pages/` to the `src` prop:
+
+```tsx[class="line-numbers"]
+   <Image
+     src="/nextjs-github-pages/vercel.svg"
+     alt="Vercel Logo"
+     className={styles.vercelLogo}
+     width={100}
+     height={24}
+     priority
+   />
+```
+
+4. Save the `page.tsx` file
+
+Learn more by reading the [official documentation](https://nextjs.org/docs/app/api-reference/next-config-js/basePath#images).
 
 ---
 
