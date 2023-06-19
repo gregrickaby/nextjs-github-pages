@@ -14,23 +14,13 @@ Now with Next.js 13 App Router support! If you're looking for Pages Router suppo
 
 ### Next.js Config
 
-First, you need to configure Next.js to support static exports. To do this, specifiy the output type as `export`, set the `basePath`, prefix assets, and disable automatic image optimization [since dynamic features don't work](https://nextjs.org/blog/next-12-3#disable-image-optimization-stable) with static exports.
+First, you need to configure Next.js to support static exports. To do this, specifiy the output type as `export`, set the base path, and disable automatic image optimization [since dynamic features don't work](https://nextjs.org/blog/next-12-3#disable-image-optimization-stable) with static exports.
 
 1. Create `next.config.js` file
 2. Add the following:
 
 ```js
 // @ts-check
-
-/**
- * The repository slug. Change this to match your repository!
- *
- * Use slug in production but don't for local development.
- *
- * @example https://github.com/username/nextjs-github-pages
- */
-const repoPath =
-  process.env.NODE_ENV === "production" ? "/nextjs-github-pages" : "";
 
 /**
  * @type {import('next').NextConfig}
@@ -44,18 +34,11 @@ const nextConfig = {
   output: "export",
 
   /**
-   * Set base path. This is usually the name of your repository.
+   * Set base path. This is usually the slug of your repository.
    *
    * @see https://nextjs.org/docs/app/api-reference/next-config-js/basePath
    */
-  basePath: repoPath,
-
-  /**
-   * Automatically prefix all asset URLs with the base path.
-   *
-   * @see https://nextjs.org/docs/app/api-reference/next-config-js/assetPrefix
-   */
-  assetPrefix: repoPath,
+  basePath: "/nextjs-github-pages",
 
   /**
    * Disable server-based image optimization. Next.js does not support
@@ -85,24 +68,50 @@ module.exports = nextConfig;
 
 Perfect! This is all you need to configure Next.js to work on Github Pages.
 
+### Add base path to `page.tsx`
+
+If you use the `<Image />` component, you will need to add the base path to your `page.tsx` file. This is required for the images to appear on Github Pages. [Learn more](https://nextjs.org/docs/app/api-reference/next-config-js/basePath#images).
+
+1. Open `app/page.tsx`
+2. Find the `Image` components
+3. Add `/nextjs-github-pages/` to the `src` prop:
+
+```tsx[class="line-numbers"]
+   <Image
+     src="/nextjs-github-pages/vercel.svg"
+     alt="Vercel Logo"
+     className={styles.vercelLogo}
+     width={100}
+     height={24}
+     priority
+   />
+```
+
+4. Save the `page.tsx` file
+
+Learn more by reading the [official documentation](https://nextjs.org/docs/app/api-reference/next-config-js/basePath#images).
+
 ---
 
 ## Configure Github Repository
 
-Now you need to configure Github for automated deployments via Github Actions. This is where your app will be deployed.
+Next you need to configure Github for automated deployments via Github Actions.
 
 ### Enable Github Pages
+
+Next up, you need to enable Github Pages for your repository. This is where your app will be deployed.
 
 The following settings use the new [Github Action Workflow (beta)](https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/) to deploy. I prefer this workflow because you don't need to generate SSH keys or use a personal access token.
 
 1. Go to your repository's **Settings** tab
 2. Click "Pages" in the sidebar
 3. Under "Build and Deployment", select "Github Actions" as the source:
-   ![screenshot of github pages settings](https://github.com/gregrickaby/nextjs-github-pages/assets/200280/a5f757c3-f515-4ca2-aadf-d2979c2c3bf5)
 
 ### Setup Github Action
 
-This is where the magic happens! This [workflow file](https://github.com/gregrickaby/nextjs-github-pages/blob/main/.github/workflows/deploy.yml) will automatically build and deploy the app when you push to the `main` branch.
+This is where the magic happens! The [workflow file](https://github.com/gregrickaby/nextjs-github-pages/blob/main/.github/workflows/deploy.yml) was automatically generated when I enabled Github Actions as the method for generating pages. This workflow will automatically build and deploy the app when you push to the `main` branch.
+
+I needed to slightly modify the auto-generated workflow file since it doesn't appear to support the `App` router.
 
 1. Create `.github/workflows/deploy.yml` file
 2. Paste the contents of <https://github.com/gregrickaby/nextjs-github-pages/blob/main/.github/workflows/deploy.yml>
@@ -122,6 +131,6 @@ You should see your site deployed to Github Pages in a few minutes. 🚀
 
 ## Wrap up
 
-If you noticed someting wrong, please [file an issue](https://github.com/gregrickaby/nextjs-github-pages/issues). Thank you for reading and good luck! 🍻
+Thanks for reading and I hope this helps. If you noticed someting wrong, please [file an issue](https://github.com/gregrickaby/nextjs-github-pages/issues). Good luck! 🍻
 
 ---
