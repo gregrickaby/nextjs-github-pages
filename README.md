@@ -14,12 +14,12 @@ Now with Next.js 13 App Router support! If you're looking for Pages Router suppo
 
 ### Next.js Config
 
-First, you need to configure Next.js to support static exports. To do this, specifiy the output type as `export`, set the base path, and disable automatic image optimization [since dynamic features don't work](https://nextjs.org/blog/next-12-3#disable-image-optimization-stable) with static exports.
+First, you need to configure Next.js to support static exports. To do this, specifiy the output type as `export`, set the `basePath`, and disable automatic image optimization [since dynamic features don't work](https://nextjs.org/blog/next-12-3#disable-image-optimization-stable) with static exports.
 
 1. Create `next.config.js` file
 2. Add the following:
 
-```js[class="line-numbers"]
+```js
 // @ts-check
 
 /**
@@ -27,21 +27,22 @@ First, you need to configure Next.js to support static exports. To do this, spec
  **/
 const nextConfig = {
   /**
-   * Enable static exports for App Router.
+   * Enable static exports for the App Router.
    *
    * @see https://nextjs.org/docs/pages/building-your-application/deploying/static-exports
    */
   output: "export",
 
   /**
-   * Set base path for GitHub Pages.
+   * Set base path. This is usually the name of your repository.
    *
    * @see https://nextjs.org/docs/app/api-reference/next-config-js/basePath
    */
   basePath: "/nextjs-github-pages",
 
   /**
-   * Disable server-based image optimization.
+   * Disable server-based image optimization. Next.js does not support
+   * dynamic features with static exports.
    *
    * @see https://nextjs.org/docs/pages/api-reference/components/image#unoptimized
    */
@@ -75,15 +76,15 @@ Next, you need to add the base path to your `page.tsx` file. This is required fo
 2. Find the `Image` components
 3. Add `/nextjs-github-pages/` to the `src` prop:
 
-```tsx[class="line-numbers"]
-   <Image
-     src="/nextjs-github-pages/vercel.svg"
-     alt="Vercel Logo"
-     className={styles.vercelLogo}
-     width={100}
-     height={24}
-     priority
-   />
+```tsx
+<Image
+  src="/nextjs-github-pages/vercel.svg"
+  alt="Vercel Logo"
+  className={styles.vercelLogo}
+  width={100}
+  height={24}
+  priority
+/>
 ```
 
 4. Save the `page.tsx` file
