@@ -109,9 +109,7 @@ The following settings use the new [Github Action Workflow (beta)](https://githu
 
 ### Setup Github Action
 
-This is where the magic happens! The [workflow file](https://github.com/gregrickaby/nextjs-github-pages/blob/main/.github/workflows/deploy.yml) was automatically generated when I enabled Github Actions as the method for generating pages. This workflow will automatically build and deploy the app when you push to the `main` branch.
-
-I needed to slightly modify the auto-generated workflow file since it doesn't appear to support the `App` router.
+This is where the magic happens! This [workflow file](https://github.com/gregrickaby/nextjs-github-pages/blob/main/.github/workflows/deploy.yml) will automatically build and deploy the app when you push to the `main` branch.
 
 1. Create `.github/workflows/deploy.yml` file
 2. Paste the contents of <https://github.com/gregrickaby/nextjs-github-pages/blob/main/.github/workflows/deploy.yml>
