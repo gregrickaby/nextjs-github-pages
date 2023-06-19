@@ -1,7 +1,5 @@
 // @ts-check
 
-const isProd = process.env.NODE_ENV === "production";
-
 /**
  * @type {import('next').NextConfig}
  **/
@@ -14,12 +12,11 @@ const nextConfig = {
   output: "export",
 
   /**
-   * Tell Next.js where the `public` folder is.
-   * Replace `nextjs-github-pages` with your Github repo project name.
+   * Set base path for GitHub Pages.
    *
-   * @see https://nextjs.org/docs/app/api-reference/next-config-js/assetPrefix
+   * @see https://nextjs.org/docs/app/api-reference/next-config-js/basePath
    */
-  assetPrefix: isProd ? "/nextjs-github-pages/" : "",
+  basePath: "/nextjs-github-pages",
 
   /**
    * Disable server-based image optimization.
