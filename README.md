@@ -95,23 +95,21 @@ Learn more by reading the [official documentation](https://nextjs.org/docs/app/a
 
 ## Configure Github Repository
 
-Next you need to configure Github for automated deployments via Github Actions.
+Now you need to configure Github for automated deployments via Github Actions. This is where your app will be deployed.
 
 ### Enable Github Pages
-
-Next up, you need to enable Github Pages for your repository. This is where your app will be deployed.
 
 The following settings use the new [Github Action Workflow (beta)](https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/) to deploy. I prefer this workflow because you don't need to generate SSH keys or use a personal access token.
 
 1. Go to your repository's **Settings** tab
 2. Click "Pages" in the sidebar
 3. Under "Build and Deployment", select "Github Actions" as the source:
+![screenshot of github pages settings](https://github.com/gregrickaby/nextjs-github-pages/assets/200280/a5f757c3-f515-4ca2-aadf-d2979c2c3bf5)
+
 
 ### Setup Github Action
 
-This is where the magic happens! The [workflow file](https://github.com/gregrickaby/nextjs-github-pages/blob/main/.github/workflows/deploy.yml) was automatically generated when I enabled Github Actions as the method for generating pages. This workflow will automatically build and deploy the app when you push to the `main` branch.
-
-I needed to slightly modify the auto-generated workflow file since it doesn't appear to support the `App` router.
+This is where the magic happens! This [workflow file](https://github.com/gregrickaby/nextjs-github-pages/blob/main/.github/workflows/deploy.yml) will automatically build and deploy the app when you push to the `main` branch.
 
 1. Create `.github/workflows/deploy.yml` file
 2. Paste the contents of <https://github.com/gregrickaby/nextjs-github-pages/blob/main/.github/workflows/deploy.yml>
@@ -131,6 +129,6 @@ You should see your site deployed to Github Pages in a few minutes. 🚀
 
 ## Wrap up
 
-Thanks for reading and I hope this helps. If you noticed someting wrong, please [file an issue](https://github.com/gregrickaby/nextjs-github-pages/issues). Good luck! 🍻
+If you noticed someting wrong, please [file an issue](https://github.com/gregrickaby/nextjs-github-pages/issues). Thank you for reading and good luck! 🍻
 
 ---
