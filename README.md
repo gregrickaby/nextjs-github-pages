@@ -4,13 +4,13 @@ Deploy Next.js to Github Pages with Github Actions.
 
 👉 [View the deployed app](https://gregrickaby.github.io/nextjs-github-pages/) 🚀
 
-Now with Next.js 13 App Router support!
-
-> ⚠️ Heads up! Github Pages _does not_ support serverless or edge functions. This means dynamic functionality will be disabled. [Learn more](https://nextjs.org/docs/pages/building-your-application/deploying/static-exports#unsupported-features)
+Now with Next.js 13 App Router support! If you're looking for Pages Router support [click here](https://github.com/gregrickaby/nextjs-github-pages/releases/tag/pages_dir).
 
 ---
 
 ## Configure Next.js
+
+> ⚠️ Heads up! Github Pages _does not_ support serverless or edge functions. This means dynamic functionality will be disabled. [Learn more](https://nextjs.org/docs/pages/building-your-application/deploying/static-exports#unsupported-features)
 
 First, you need to configure Next.js to support static exports. To do this, specifiy the output type as `export`, set the base path, and disable automatic image optimization [since dynamic features don't work](https://nextjs.org/blog/next-12-3#disable-image-optimization-stable) with static exports.
 
