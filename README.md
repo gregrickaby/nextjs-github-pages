@@ -8,27 +8,52 @@ Vercel promotes itself as _"The easiest way to deploy your Next.js app"_ and Net
 
 During my research, **I've found very little documentation around deploying a static Next.js app to Github Pages.** I spent an entire Saturday working through it and want to share what I learned with you.
 
-> Update: Vercel has since published an [official example](https://github.com/vercel/next.js/tree/canary/examples/github-pages). I recommend you take a look at the official example before making any major decisions.
+> Update: Vercel has since published an [official example](https://github.com/vercel/next.js/tree/canary/examples/github-pages). I recommend you take a look before making any major decisions.
 
 ---
 
 ## Configure Next.js
 
-In order to get assets to display correctly, you'll need to prefix the assets directory. Additionally, you'll need to disable [automatic image optimization](https://nextjs.org/blog/next-12-3#disable-image-optimization-stable) since _dynamic features don't work_ when using `next export`.
+In order to get assets to display correctly, you'll need to specifiy the output as `export`, prefix the assets directory, and disable [automatic image optimization](https://nextjs.org/blog/next-12-3#disable-image-optimization-stable) since _dynamic features don't work_ when using `next export`.
 
 1. Create `next.config.js` file
 2. Add the following:
 
 ```js[class="line-numbers"]
-// next.config.js
-const isProd = process.env.NODE_ENV === 'production'
+// @ts-check
 
-module.exports = {
-  assetPrefix: isProd ? '/your-github-repo-name/' : '',
+const isProd = process.env.NODE_ENV === "production";
+
+/**
+ * @type {import('next').NextConfig}
+ **/
+const nextConfig = {
+  /**
+   * Enable static exports for App Router.
+   *
+   * @see https://nextjs.org/docs/pages/building-your-application/deploying/static-exports
+   */
+  output: "export",
+
+  /**
+   * Tell Next.js where the `public` folder is.
+   * Replace `nextjs-github-pages` with your Github repo project name.
+   *
+   * @see https://nextjs.org/docs/app/api-reference/next-config-js/assetPrefix
+   */
+  assetPrefix: isProd ? "/nextjs-github-pages/" : "",
+
+  /**
+   * Disable server-based image optimization.
+   *
+   * @see https://nextjs.org/docs/pages/api-reference/components/image#unoptimized
+   */
   images: {
     unoptimized: true,
   },
-}
+};
+
+module.exports = nextConfig;
 ```
 
 3. Save the `next.config.js`
@@ -37,16 +62,15 @@ module.exports = {
 
 ```treeview
 .
-├── pages/
+├── app/
 ├── public/
 │   └── .nojekyll
-├── styles/
 ├── next.config.js
 ```
 
 Perfect! This is all you need to configure Next.js to work on Github Pages.
 
-> Heads up! Github Pages _does not_ support serverless functions. This means dynamic functionality will be disabled. [Learn more](https://nextjs.org/docs/advanced-features/static-html-export#unsupported-features)
+> Heads up! Github Pages _does not_ support serverless or edge functions. This means dynamic functionality will be disabled. [Learn more](https://nextjs.org/docs/pages/building-your-application/deploying/static-exports#unsupported-features)
 
 ---
 
@@ -130,14 +154,13 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 'lts/*'
-          cache: 'npm'
+          node-version: "lts/*"
+          cache: "npm"
 
       - name: Build
         run: |
           npm i
           npm run build
-          npm run export
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
