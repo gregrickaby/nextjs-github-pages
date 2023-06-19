@@ -70,7 +70,7 @@ Perfect! This is all you need to configure Next.js to work on Github Pages.
 
 ### Add base path to `page.tsx`
 
-If you use the `<Image />` component, you will need to add the base path to your `page.tsx` file. This is required for the images to appear on Github Pages. [Learn more](https://nextjs.org/docs/app/api-reference/next-config-js/basePath#images).
+Next, you will need to add the base path to your `page.tsx` file. This is required for the images to appear on Github Pages.
 
 1. Open `app/page.tsx`
 2. Find the `Image` components
@@ -89,7 +89,7 @@ If you use the `<Image />` component, you will need to add the base path to your
 
 4. Save the `page.tsx` file
 
-Learn more by reading the [official documentation](https://nextjs.org/docs/app/api-reference/next-config-js/basePath#images).
+Learn more by reading the official documentation [for basePath and images](https://nextjs.org/docs/app/api-reference/next-config-js/basePath#images).
 
 ---
 
@@ -99,13 +99,13 @@ Next you need to configure Github for automated deployments via Github Actions.
 
 ### Enable Github Pages
 
-Next up, you need to enable Github Pages for your repository. This is where your app will be deployed.
-
 The following settings use the new [Github Action Workflow (beta)](https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/) to deploy. I prefer this workflow because you don't need to generate SSH keys or use a personal access token.
 
 1. Go to your repository's **Settings** tab
 2. Click "Pages" in the sidebar
 3. Under "Build and Deployment", select "Github Actions" as the source:
+
+![screenshot of github pages settings](https://github.com/gregrickaby/nextjs-github-pages/assets/200280/a5f757c3-f515-4ca2-aadf-d2979c2c3bf5)
 
 ### Setup Github Action
 
