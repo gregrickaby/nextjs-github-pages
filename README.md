@@ -1,16 +1,14 @@
 # Next.js Github Pages
 
-Deploy Next.js to Github Pages with Github Actions.
+Deploy Next.js to Github Pages with Github Actions. [View the deployed app](https://gregrickaby.github.io/nextjs-github-pages/) 🚀
 
-👉 [View the deployed app](https://gregrickaby.github.io/nextjs-github-pages/) 🚀
+Now with Next.js 13 App Router support! If you need Pages Router support [click here](https://github.com/gregrickaby/nextjs-github-pages/releases/tag/pages_dir).
 
-Now with Next.js 13 App Router support! If you're looking for Pages Router support [click here](https://github.com/gregrickaby/nextjs-github-pages/releases/tag/pages_dir).
+> ⚠️ Heads up! Github Pages _does not_ support serverless or edge functions. This means dynamic functionality will be disabled. See all the [unsupported features](https://nextjs.org/docs/pages/building-your-application/deploying/static-exports#unsupported-features).
 
 ---
 
 ## Configure Next.js
-
-> ⚠️ Heads up! Github Pages _does not_ support serverless or edge functions. This means dynamic functionality will be disabled. [Learn more](https://nextjs.org/docs/pages/building-your-application/deploying/static-exports#unsupported-features)
 
 ### Next.js Config
 
