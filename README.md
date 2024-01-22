@@ -14,15 +14,11 @@ Now with Next.js 13 App Router support! If you need Pages Router support [click 
 
 First, you need to configure Next.js to support static exports. To do this, specifiy the output type as `export`, set the base path, and disable automatic image optimization [since dynamic features don't work](https://nextjs.org/blog/next-12-3#disable-image-optimization-stable) with static exports.
 
-1. Edit the `next.config.mjs` file
+1. Open the `next.config.mjs` file
 2. Add the following:
 
 ```js
-// @ts-check
-
-/**
- * @type {import('next').NextConfig}
- **/
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   /**
    * Enable static exports for the App Router.
@@ -49,7 +45,7 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
 ```
 
 3. Save the `next.config.mjs`
