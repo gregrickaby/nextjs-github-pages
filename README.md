@@ -14,7 +14,7 @@ Now with Next.js 13 App Router support! If you need Pages Router support [click 
 
 First, you need to configure Next.js to support static exports. To do this, specifiy the output type as `export`, set the base path, and disable automatic image optimization [since dynamic features don't work](https://nextjs.org/blog/next-12-3#disable-image-optimization-stable) with static exports.
 
-1. Create `next.config.js` file
+1. Edit the `next.config.mjs` file
 2. Add the following:
 
 ```js
@@ -27,7 +27,7 @@ const nextConfig = {
   /**
    * Enable static exports for the App Router.
    *
-   * @see https://nextjs.org/docs/pages/building-your-application/deploying/static-exports
+   * @see https://nextjs.org/docs/app/building-your-application/deploying/static-exports
    */
   output: "export",
 
@@ -52,7 +52,7 @@ const nextConfig = {
 module.exports = nextConfig;
 ```
 
-3. Save the `next.config.js`
+3. Save the `next.config.mjs`
 
 4. Finally, place a `.nojekyll` file in the `/public` directory to disable Github Pages from trying to create a [Jekyll](https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/) website.
 
@@ -97,7 +97,7 @@ Next you need to configure Github for automated deployments via Github Actions.
 
 ### Enable Github Pages
 
-The following settings use the new [Github Action Workflow (beta)](https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/) to deploy. I prefer this workflow because you don't need to generate SSH keys or use a personal access token.
+The following settings use the [Github Action Deploy Pages](https://github.com/actions/deploy-pages) to deploy. I prefer this workflow because you don't need to generate SSH keys or use a personal access token.
 
 1. Go to your repository's **Settings** tab
 2. Click "Pages" in the sidebar
