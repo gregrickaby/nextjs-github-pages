@@ -68,11 +68,11 @@ Next, you will need to add the base path to images in `page.tsx` file. This is r
 
 1. Open `app/page.tsx`
 2. Find the `Image` components
-3. Add `nextjs-github-pages/` (or the slug of your GitHub repository) to the `src` prop:
+3. Add `/nextjs-github-pages/` (or the slug of your GitHub repository) to the `src` prop:
 
 ```tsx[class="line-numbers"]
    <Image
-     src="nextjs-github-pages/vercel.svg"
+     src="/nextjs-github-pages/vercel.svg"
      alt="Vercel Logo"
      className={styles.vercelLogo}
      width={100}
@@ -83,7 +83,7 @@ Next, you will need to add the base path to images in `page.tsx` file. This is r
 
 4. Save the `page.tsx` file
 
-Learn more by reading the official documentation [for basePath and images](https://nextjs.org/docs/app/api-reference/next-config-js/basePath#images).
+Learn more by reading the official documentation [for basePath and images](https://nextjs.org/docs/app/api-reference/config/next-config-js/basePath#images).
 
 ---
 
