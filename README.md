@@ -14,7 +14,7 @@ Now with Next.js App Router support! If you need Pages Router support [click her
 
 First, you need to configure Next.js to [deploy static exports](https://nextjs.org/docs/app/building-your-application/deploying/static-exports). This is required for GitHub Pages to work.
 
-1. Open the `next.config.mjs` file
+1. Open the `next.config.ts` file
 2. Add the following:
 
 ```js
@@ -48,7 +48,7 @@ const nextConfig = {
 export default nextConfig;
 ```
 
-3. Save the `next.config.mjs`
+3. Save the `next.config.ts`
 
 4. Finally, place a `.nojekyll` file in the `/public` directory to disable GitHub Pages from trying to create a [Jekyll](https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/) website.
 
@@ -68,11 +68,11 @@ Next, you will need to add the base path to images in `page.tsx` file. This is r
 
 1. Open `app/page.tsx`
 2. Find the `Image` components
-3. Add `/nextjs-github-pages/` (or the slug of your GitHub repository) to the `src` prop:
+3. Add `nextjs-github-pages/` (or the slug of your GitHub repository) to the `src` prop:
 
 ```tsx[class="line-numbers"]
    <Image
-     src="/nextjs-github-pages/vercel.svg"
+     src="nextjs-github-pages/vercel.svg"
      alt="Vercel Logo"
      className={styles.vercelLogo}
      width={100}
