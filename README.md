@@ -69,15 +69,15 @@ Next, you will need to add the base path to images in `page.tsx` file. This is r
 2. Find the `Image` components
 3. Add `/nextjs-github-pages/` (or the slug of your GitHub repository) to the `src` prop:
 
-```tsx[class="line-numbers"]
-   <Image
-     src="/nextjs-github-pages/vercel.svg"
-     alt="Vercel Logo"
-     className={styles.vercelLogo}
-     width={100}
-     height={24}
-     priority
-   />
+```tsx
+<Image
+  src="/nextjs-github-pages/vercel.svg"
+  alt="Vercel Logo"
+  className={styles.vercelLogo}
+  width={100}
+  height={24}
+  priority
+/>
 ```
 
 4. Save the `page.tsx` file
@@ -88,17 +88,7 @@ Learn more by reading the official documentation [for basePath and images](https
 
 ## Configure GitHub Repository
 
-Next you need to configure Github for automated deployments via GitHub Actions.
-
-### Enable GitHub Pages
-
-The following settings use the [Github Action Deploy Pages](https://github.com/actions/deploy-pages) to deploy. I prefer this workflow because you don't need to generate SSH keys or use a personal access token.
-
-1. Go to your repository's **Settings** tab
-2. Click "Pages" in the sidebar
-3. Under "Build and Deployment", select "GitHub Actions" as the source:
-
-![screenshot of github pages settings](https://github.com/gregrickaby/nextjs-github-pages/assets/200280/a5f757c3-f515-4ca2-aadf-d2979c2c3bf5)
+Now that Next.js is configured, you need to set up your GitHub repository to deploy to GitHub Pages.
 
 ### Setup GitHub Action
 
@@ -108,12 +98,20 @@ This is where the magic happens! This [workflow file](https://github.com/gregric
 2. Paste the contents of <https://github.com/gregrickaby/nextjs-github-pages/blob/main/.github/workflows/deploy.yml>
 3. Save the `deploy.yml` file
 
+### Enable GitHub Pages
+
+1. Go to your repository's **Settings** tab
+2. Click "Pages" in the sidebar
+3. Under "Build and Deployment", select "GitHub Actions" as the source:
+
+![screenshot of github pages settings](https://dl.dropboxusercontent.com/s/vf74zv2wcepnt9w/Screenshot%202025-02-03%20at%2021.10.06.png?dl=0)
+
 ### Push to GitHub
 
 Now that everything is configured, you can commit your code and push to GitHub. This will trigger the GitHub Action workflow and deploy your app to GitHub Pages.
 
 ```bash
-git add . && git commit -m "Initial commit" && git push
+git add . && git commit -m "initial commit" && git push
 ```
 
 You should see your site deployed to GitHub Pages in a few minutes. 🚀
@@ -122,6 +120,6 @@ You should see your site deployed to GitHub Pages in a few minutes. 🚀
 
 ## Wrap up
 
-Thanks for reading and I hope this helps. If you noticed someting wrong, please [file an issue](https://github.com/gregrickaby/nextjs-github-pages/issues). Good luck! 🍻
+Thanks for reading and I hope this helps. If you noticed someting wrong, please [open an issue](https://github.com/gregrickaby/nextjs-github-pages/issues). Cheers! 🍻
 
 ---
