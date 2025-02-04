@@ -2,8 +2,6 @@
 
 Deploy Next.js to GitHub Pages with GitHub Actions. [View the deployed app](https://gregrickaby.github.io/nextjs-github-pages/) 🚀
 
-Now with Next.js App Router support! If you need Pages Router support [click here](https://github.com/gregrickaby/nextjs-github-pages/releases/tag/pages_dir).
-
 > ⚠️ Heads up! GitHub Pages _does not_ support serverless or edge functions. This means dynamic functionality will be disabled. See all the [unsupported features](https://nextjs.org/docs/app/building-your-application/deploying/static-exports#unsupported-features).
 
 ---
@@ -17,11 +15,12 @@ First, you need to configure Next.js to [deploy static exports](https://nextjs.o
 1. Open the `next.config.ts` file
 2. Add the following:
 
-```js
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+```typescript
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
   /**
-   * Enable static exports for the App Router.
+   * Enable static exports.
    *
    * @see https://nextjs.org/docs/app/building-your-application/deploying/static-exports
    */
@@ -57,7 +56,7 @@ export default nextConfig;
 ├── app/
 ├── public/
 │   └── .nojekyll
-├── next.config.js
+├── next.config.ts
 ```
 
 Perfect! This is all you need to configure Next.js to deploy on GitHub Pages.
