@@ -2,7 +2,7 @@
 
 Deploy Next.js to GitHub Pages with GitHub Actions. [View the deployed app](https://gregrickaby.github.io/nextjs-github-pages/) 🚀
 
-> ⚠️ Heads up! GitHub Pages _does not_ support serverless or edge functions. This means dynamic functionality will be disabled. See all the [unsupported features](https://nextjs.org/docs/app/building-your-application/deploying/static-exports#unsupported-features).
+> ⚠️ Heads up! GitHub Pages _is not_ a Node.js server. So dynamic logic that cannot be computed during the build process, are not supported! See all the [unsupported features](https://nextjs.org/docs/app/building-your-application/deploying/static-exports#unsupported-features).
 
 ---
 
@@ -120,6 +120,6 @@ You should see your site deployed to GitHub Pages in a few minutes. 🚀
 
 ## Wrap up
 
-Thanks for reading and I hope this helps. If you noticed someting wrong, please [open an issue](https://github.com/gregrickaby/nextjs-github-pages/issues). Cheers! 🍻
+Thanks for reading and I hope this helps. If you noticed something wrong, please [open an issue](https://github.com/gregrickaby/nextjs-github-pages/issues). Cheers! 🍻
 
 ---
