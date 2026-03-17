@@ -9,17 +9,17 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "next": "^16.1.6",
+    "next": "^16.1.7",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.2.1",
-    "@types/node": "^25.3.5",
+    "@types/node": "^25.5.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "eslint": "^9.39.2",
-    "eslint-config-next": "^16.1.6",
+    "eslint-config-next": "^16.1.7",
     "tailwindcss": "^4.2.1",
     "typescript": "^5.9.3"
   }
